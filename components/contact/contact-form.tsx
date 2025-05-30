@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, CheckCircle, AlertCircle, Loader2 } from "lucide-react"
 
 const topics = [
   { value: "strategy", label: "Strategy & Architecture" },
@@ -21,10 +21,53 @@ export default function ContactForm() {
     agreed: false
   })
 
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: Implement form submission
-    console.log("Form submitted:", formData)
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+    setErrorMessage('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          topic: formData.topic,
+          message: formData.message,
+        }),
+      })
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          topic: "",
+          message: "",
+          agreed: false
+        })
+      } else {
+        const errorData = await response.json()
+        setSubmitStatus('error')
+        setErrorMessage(errorData.error || 'Failed to send message. Please try again.')
+      }
+    } catch (error) {
+      setSubmitStatus('error')
+      setErrorMessage('Network error. Please check your connection and try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -37,8 +80,40 @@ export default function ContactForm() {
     setFormData(prev => ({ ...prev, [name]: checked }))
   }
 
+  // Success Message
+  if (submitStatus === 'success') {
+    return (
+      <div className="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-2xl p-8 text-center">
+        <CheckCircle className="w-16 h-16 text-green-600 mx-auto mb-4" />
+        <h3 className="text-2xl font-semibold text-green-900 mb-2">
+          Message Sent Successfully!
+        </h3>
+        <p className="text-green-700 mb-6">
+          Thank you for reaching out. We'll get back to you within 1-2 business days.
+        </p>
+        <button
+          onClick={() => setSubmitStatus('idle')}
+          className="text-green-600 hover:text-green-800 font-medium transition-colors"
+        >
+          Send another message
+        </button>
+      </div>
+    )
+  }
+
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Error Message */}
+      {submitStatus === 'error' && (
+        <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-start gap-3">
+          <AlertCircle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
+          <div>
+            <h4 className="text-red-800 font-medium mb-1">Failed to send message</h4>
+            <p className="text-red-700 text-sm">{errorMessage}</p>
+          </div>
+        </div>
+      )}
+
       {/* Name Field */}
       <div className="relative">
         <input
@@ -50,6 +125,7 @@ export default function ContactForm() {
           className="peer w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-[#b48a98] transition-colors"
           placeholder="Full Name"
           required
+          disabled={isSubmitting}
         />
         <label
           htmlFor="name"
@@ -72,6 +148,7 @@ export default function ContactForm() {
           className="peer w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-[#b48a98] transition-colors"
           placeholder="Business Email"
           required
+          disabled={isSubmitting}
         />
         <label
           htmlFor="email"
@@ -93,6 +170,7 @@ export default function ContactForm() {
           onChange={handleChange}
           className="peer w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-[#b48a98] transition-colors"
           placeholder="Company"
+          disabled={isSubmitting}
         />
         <label
           htmlFor="company"
@@ -113,6 +191,7 @@ export default function ContactForm() {
           onChange={handleChange}
           className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:outline-none focus:border-[#b48a98] transition-colors appearance-none bg-white"
           required
+          disabled={isSubmitting}
         >
           <option value="">Select a topic</option>
           {topics.map(topic => (
@@ -140,6 +219,7 @@ export default function ContactForm() {
           className="peer w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-[#b48a98] transition-colors resize-none"
           placeholder="Message"
           required
+          disabled={isSubmitting}
         />
         <label
           htmlFor="message"
@@ -161,6 +241,7 @@ export default function ContactForm() {
           onChange={handleCheckboxChange}
           className="mt-1 h-4 w-4 rounded border-gray-300 text-[#b48a98] focus:ring-[#b48a98]"
           required
+          disabled={isSubmitting}
         />
         <label htmlFor="agreed" className="text-sm text-gray-600">
           I agree to the{" "}
@@ -178,10 +259,20 @@ export default function ContactForm() {
       {/* Submit Button */}
       <button
         type="submit"
-        className="inline-flex items-center gap-2 px-6 py-3 bg-[#b48a98] text-white rounded-full font-medium hover:bg-[#b48a98]/90 transition-all duration-300 group"
+        disabled={isSubmitting || !formData.agreed}
+        className="inline-flex items-center gap-2 px-6 py-3 bg-[#b48a98] text-white rounded-full font-medium hover:bg-[#b48a98]/90 transition-all duration-300 group disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        Send Message
-        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+        {isSubmitting ? (
+          <>
+            <Loader2 className="w-4 h-4 animate-spin" />
+            Sending...
+          </>
+        ) : (
+          <>
+            Send Message
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          </>
+        )}
       </button>
     </form>
   )

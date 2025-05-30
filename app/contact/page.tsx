@@ -71,11 +71,11 @@ export default function Contact() {
                 </h3>
                 <div className="space-y-4">
                   <a 
-                    href="mailto:hello@tdc-consulting.com"
+                    href="mailto:info@td-consult.info"
                     className="flex items-center gap-3 text-[#b48a98] hover:text-[#8b4c5f] transition-colors"
                   >
                     <Mail className="w-5 h-5" />
-                    <span className="font-medium">hello@tdc-consulting.com</span>
+                    <span className="font-medium">info@td-consult.info</span>
                   </a>
                 </div>
               </div>

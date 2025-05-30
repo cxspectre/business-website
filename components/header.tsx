@@ -72,7 +72,7 @@ const Header = () => {
           <div className={`flex transition-all duration-300 ${isMounted && isScrolled ? "space-x-5" : "space-x-6"}`}>
             <NavLink href="/services" label="Services" isScrolled={isMounted && isScrolled} />
             <NavLink href="/about" label="About" isScrolled={isMounted && isScrolled} />
-            <NavLink href="/blog" label="Blog" isScrolled={isMounted && isScrolled} />
+            <NavLink href="/thetanjaroom" label="TheTanjaRoom" isScrolled={isMounted && isScrolled} />
           </div>
           <Link
             href="/contact"
@@ -102,7 +102,7 @@ const Header = () => {
           <nav className="flex flex-col p-4 space-y-2">
             <MobileNavLink href="/services" label="Services" onClick={toggleMenu} />
             <MobileNavLink href="/about" label="About" onClick={toggleMenu} />
-            <MobileNavLink href="/blog" label="Blog" onClick={toggleMenu} />
+            <MobileNavLink href="/thetanjaroom" label="TheTanjaRoom" onClick={toggleMenu} />
             <Link
               href="/contact"
               className="bg-white hover:bg-white/90 text-[#b48a98] px-4 py-2 rounded-full text-center text-sm shadow-md hover:shadow-lg flex items-center justify-center gap-2 group"

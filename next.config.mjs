@@ -2,8 +2,6 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  basePath: '/business-website',
-  assetPrefix: '/business-website/',
   eslint: {
     ignoreDuringBuilds: true,
   },

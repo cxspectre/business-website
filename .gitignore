@@ -16,8 +16,9 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files
+# env files - SECURITY CRITICAL
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -25,3 +26,20 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Security: Additional patterns to prevent accidental commits
+# Test files that might contain sensitive data
+test-contact*.js
+*-debug.js
+*.tmp
+*.log
+
+# Backup files
+*.bak
+*~
+
+# IDE/Editor files that might contain sensitive info
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
