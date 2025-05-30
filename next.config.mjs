@@ -2,8 +2,8 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  basePath: '/tanja-drefke-consult',
-  assetPrefix: '/tanja-drefke-consult',
+  basePath: '/business-website',
+  assetPrefix: '/business-website',
   eslint: {
     ignoreDuringBuilds: true,
   },
