@@ -121,81 +121,40 @@ const Hero = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.4, ease: [0.23, 1, 0.32, 1] }}
-            className="lg:col-span-5 space-y-3"
+            className="lg:col-span-5 flex flex-col justify-center items-end"
           >
-            <motion.div
-              initial={{ opacity: 0, y: 20, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ delay: 0.6, duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
-              className="relative group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#cea7b1]/15 to-[#5b3c46]/15 rounded-xl blur-lg group-hover:blur-xl transition-all duration-300" />
-              <div className="relative bg-white/12 backdrop-blur-lg border border-white/25 rounded-xl p-3 hover:bg-white/15 transition-all duration-300">
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 bg-gradient-to-br from-[#cea7b1] to-[#5b3c46] rounded-lg flex items-center justify-center shadow-md">
-                    <CheckCircle className="w-4 h-4 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-lg font-bold text-white">98%</div>
-                    <div className="text-white/80 text-xs font-medium">Success Rate</div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ delay: 0.8, duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
-              className="relative group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#996475]/15 to-[#cea7b1]/15 rounded-xl blur-lg group-hover:blur-xl transition-all duration-300" />
-              <div className="relative bg-white/12 backdrop-blur-lg border border-white/25 rounded-xl p-3 hover:bg-white/15 transition-all duration-300">
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 bg-gradient-to-br from-[#996475] to-[#cea7b1] rounded-lg flex items-center justify-center shadow-md">
-                    <Users className="w-4 h-4 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-lg font-bold text-white">150+</div>
-                    <div className="text-white/80 text-xs font-medium">Transformations</div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ delay: 1.0, duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
-              className="relative group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#5b3c46]/15 to-[#996475]/15 rounded-xl blur-lg group-hover:blur-xl transition-all duration-300" />
-              <div className="relative bg-white/12 backdrop-blur-lg border border-white/25 rounded-xl p-3 hover:bg-white/15 transition-all duration-300">
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 bg-gradient-to-br from-[#5b3c46] to-[#996475] rounded-lg flex items-center justify-center shadow-md">
-                    <TrendingUp className="w-4 h-4 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-base font-bold text-white">Fortune 500</div>
-                    <div className="text-white/80 text-xs font-medium">Trusted Partner</div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
+            {/* Subtle inline stats */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2, duration: 0.6 }}
-              className="flex gap-2 pt-2"
+              transition={{ delay: 0.8, duration: 0.6 }}
+              className="text-right space-y-2"
             >
-              <div className="flex items-center gap-1.5 bg-white/8 backdrop-blur-sm rounded-full px-2.5 py-1 border border-white/15">
-                <Target className="w-3 h-3 text-[#cea7b1]" />
-                <span className="text-white/85 text-xs font-medium">Zero Downtime</span>
+              <div className="text-white/60 text-sm font-medium">
+                <span className="text-[#cea7b1] font-bold">98%</span> success rate
               </div>
-              <div className="flex items-center gap-1.5 bg-white/8 backdrop-blur-sm rounded-full px-2.5 py-1 border border-white/15">
+              <div className="text-white/60 text-sm font-medium">
+                <span className="text-[#cea7b1] font-bold">150+</span> transformations delivered
+              </div>
+              <div className="text-white/60 text-sm font-medium">
+                Trusted by <span className="text-[#cea7b1] font-bold">Fortune 500</span> leaders
+              </div>
+            </motion.div>
+
+            {/* Minimal badges */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.0, duration: 0.6 }}
+              className="flex gap-3 mt-6"
+            >
+              <div className="flex items-center gap-1.5 text-white/50 text-xs">
+                <Target className="w-3 h-3 text-[#cea7b1]" />
+                <span>Zero Downtime</span>
+              </div>
+              <div className="flex items-center gap-1.5 text-white/50 text-xs">
                 <Shield className="w-3 h-3 text-[#cea7b1]" />
-                <span className="text-white/85 text-xs font-medium">Compliance Ready</span>
+                <span>Compliance Ready</span>
               </div>
             </motion.div>
           </motion.div>
