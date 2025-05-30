@@ -4,6 +4,8 @@ import CtaSection from "@/components/about/cta-section"
 import Image from "next/image"
 import Link from "next/link"
 import ScrollGradientDivider from "@/components/scroll-gradient-divider"
+import { typography } from "@/lib/typography"
+import { assetPath } from "@/lib/asset-path"
 
 const highlights = [
   "20+ Years of Experience & Insight",
@@ -83,7 +85,7 @@ export default function About() {
             {/* Background Image */}
             <div className="absolute inset-0">
               <Image
-                src="/images/About.jpeg"
+                src={assetPath("/images/About.jpeg")}
                 alt="About Hero Background"
                 fill
                 className="object-cover"
@@ -163,11 +165,11 @@ export default function About() {
             <div className="relative max-w-md">
               <div className="aspect-[3/4] rounded-3xl overflow-hidden bg-[#b48a98]/5">
                 <Image
-                  src="/images/TD.jpeg"
-                  alt="Tanja Drefke"
-                  fill
-                  className="object-cover object-center rounded-3xl"
-                  priority
+                  src={assetPath("/images/TD.jpeg")}
+                  alt="Tanja Drefke, CEO and Founder"
+                  width={400}
+                  height={400}
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="absolute inset-0 rounded-3xl ring-1 ring-inset ring-black/10" />

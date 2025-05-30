@@ -5,13 +5,15 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight, CheckCircle, Users, TrendingUp, Sparkles, Target, Shield } from "lucide-react"
 import { typography, getContainerClasses } from "@/lib/typography"
+import { Button } from "@/components/ui/button"
+import { assetPath } from "@/lib/asset-path"
 
 const Hero = () => {
   return (
     <section className="w-full h-[85vh] min-h-[600px] max-h-[850px] relative flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/HeroBackground.png"
+          src={assetPath("/images/HeroBackground.png")}
           alt="Hero Background"
           fill
           className="object-cover scale-105"

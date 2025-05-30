@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef, useEffect } from "react"
+import { assetPath } from "@/lib/asset-path"
 
 interface AnimatedLogoProps {
   className?: string
@@ -38,7 +39,7 @@ const AnimatedLogo = ({ className = "", isScrolled = false, shouldPlay = false }
           pointerEvents: 'none'
         }}
       >
-        <source src="/videos/intro-animation.mp4" type="video/mp4" />
+        <source src={assetPath("/videos/intro-animation.mp4")} type="video/mp4" />
       </video>
     </div>
   )

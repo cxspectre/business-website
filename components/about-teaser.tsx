@@ -5,6 +5,7 @@ import Link from "next/link"
 import { ArrowRight, Globe2, Lightbulb, Shield, CloudIcon, Gauge, Cpu, Award } from "lucide-react"
 import { motion } from "framer-motion"
 import { typography } from "@/lib/typography"
+import { assetPath } from "@/lib/asset-path"
 
 const expertise = [
   {
@@ -86,7 +87,7 @@ const AboutTeaser = () => {
           <div className="relative">
             <div className="w-full max-w-sm mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/TD.jpeg"
+                src={assetPath("/images/TD.jpeg")}
                 alt="Tanja Drefke, CEO and Founder"
                 width={400}
                 height={400}
