@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-plum: #5b3c46;
+  --deep-mauve: #996475;
+  --dusty-rose: #cea7b1;
+  --blush-mist: #ffeef3;
+  --midnight: #0b1c28;
+  --pearl: #f4e4e9;
+  --glass-fill: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.18);
+}
+
+body {
+  color: var(--pearl);
+}
+
+@layer components {
+  .glass-card {
+    position: relative;
+    border-radius: 24px;
+    backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    overflow: hidden;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+  }
+
+  .glass-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .gradient-text {
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(
+      145deg,
+      var(--primary-plum) 0%,
+      var(--deep-mauve) 45%,
+      var(--dusty-rose) 75%,
+      transparent 100%
+    );
+  }
+
+  .btn {
+    border-radius: 24px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    transition: all 250ms ease-out;
+  }
+
+  .btn-primary {
+    background-color: var(--primary-plum);
+    color: var(--pearl);
+    box-shadow: 0 0 0 0 rgba(244, 228, 233, 0);
+    transition: background-color 0.25s ease-out, box-shadow 2s linear;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--deep-mauve);
+    box-shadow: 0 0 16px 4px rgba(244, 228, 233, 0.25);
+    animation: pulse 2s infinite;
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--dusty-rose);
+    color: var(--pearl);
+  }
+
+  .btn-secondary:hover {
+    background-color: rgba(206, 167, 177, 0.1);
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(244, 228, 233, 0.25);
+    }
+    70% {
+      box-shadow: 0 0 0 16px rgba(244, 228, 233, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(244, 228, 233, 0);
+    }
+  }
+
+  .section-animate {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .section-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-animate {
+    transition: opacity 0.2s ease-out;
+    transform: none;
+  }
+
+  .glass-card:hover {
+    transform: none;
+  }
+
+  .btn-primary:hover {
+    animation: none;
+  }
+}
