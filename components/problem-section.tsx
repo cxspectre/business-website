@@ -3,10 +3,10 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { 
-  X, 
+  AlertCircle, 
   ArrowRight,
   TrendingDown,
-  AlertTriangle,
+  Shield,
   Users,
   Zap,
   Building
@@ -21,7 +21,7 @@ const painPoints = [
     color: "from-[#5b3c46] to-[#996475]"
   },
   {
-    icon: AlertTriangle,
+    icon: Shield,
     title: "Compliance is added too late",
     description: "Risk isn't managed — it's retrofitted. Auditors notice.",
     color: "from-[#996475] to-[#cea7b1]"
@@ -70,7 +70,7 @@ const ProblemSection = () => {
             className={`${typography.h2} text-midnight ${typography.spacing.titleMargin}`}
           >
             Why Most Transformations{" "}
-            <span className="bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#b48a98] to-[#5b3c46] bg-clip-text text-transparent">
               Stall
             </span>
           </motion.h2>
@@ -105,10 +105,10 @@ const ProblemSection = () => {
               {/* Background card */}
               <div className="relative bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 group-hover:-translate-y-2 h-full flex flex-col hover:border-[#cea7b1]/30">
                 
-                {/* X Mark and Icon */}
+                {/* Warning Icon and Main Icon */}
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center border border-red-100">
-                    <X className="w-4 h-4 text-red-500" />
+                  <div className="w-8 h-8 rounded-full bg-[#b48a98]/10 flex items-center justify-center border border-[#b48a98]/20">
+                    <AlertCircle className="w-4 h-4 text-[#b48a98]" />
                   </div>
                   <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${point.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                     <point.icon className="w-5 h-5 text-white" />
