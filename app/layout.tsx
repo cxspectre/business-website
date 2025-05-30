@@ -8,6 +8,7 @@ import Footer from "@/components/footer"
 import ClientLayout from "@/components/client-layout"
 import ErrorBoundary from "@/components/error-boundary"
 import BetaBanner from "@/components/beta-banner"
+import CookieBanner from "@/components/cookie-banner"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -44,6 +45,7 @@ export default function RootLayout({
                 <Footer />
               </div>
             </ClientLayout>
+            <CookieBanner />
           </ThemeProvider>
         </ErrorBoundary>
       </body>
