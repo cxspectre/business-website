@@ -13,7 +13,7 @@ const Hero = () => {
     <section className="w-full h-[85vh] min-h-[600px] max-h-[850px] relative flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
-          src={assetPath("/images/HeroBackground.png")}
+          src={assetPath("/images/Herobackground.png")}
           alt="Hero Background"
           fill
           className="object-cover scale-105"
