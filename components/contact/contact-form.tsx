@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { ArrowRight, CheckCircle, AlertCircle, Loader2 } from "lucide-react"
-import emailjs from '@emailjs/browser'
 
 const topics = [
   { value: "strategy", label: "Strategy & Architecture" },
@@ -33,36 +32,22 @@ export default function ContactForm() {
     setErrorMessage('')
 
     try {
-      // EmailJS configuration
-      const serviceId = 'service_td_consult'
-      const templateId = 'template_contact_form'
-      const publicKey = 'YOUR_PUBLIC_KEY' // You'll need to replace this
-
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        company: formData.company || 'Not provided',
-        topic: formData.topic,
-        message: formData.message,
-        to_email: 'info@td-consult.info'
-      }
-
-      await emailjs.send(serviceId, templateId, templateParams, publicKey)
+      // For now, show a message about EmailJS setup needed
+      // This can be updated once EmailJS is configured
+      throw new Error('EmailJS configuration needed')
       
-      setSubmitStatus('success')
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        topic: "",
-        message: "",
-        agreed: false
-      })
+      // EmailJS will be configured later with:
+      // const emailjs = (await import('@emailjs/browser')).default
+      // const serviceId = 'service_td_consult'
+      // const templateId = 'template_contact_form'
+      // const publicKey = 'YOUR_EMAILJS_PUBLIC_KEY'
+      // const templateParams = { ... }
+      // await emailjs.send(serviceId, templateId, templateParams, publicKey)
+      
     } catch (error) {
-      console.error('EmailJS error:', error)
+      console.error('Contact form error:', error)
       setSubmitStatus('error')
-      setErrorMessage('Failed to send message. Please try again or contact us directly at info@td-consult.info')
+      setErrorMessage('Please contact us directly at info@td-consult.info while we set up the contact form.')
     } finally {
       setIsSubmitting(false)
     }
