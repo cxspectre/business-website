@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { ArrowRight, CheckCircle, AlertCircle, Loader2 } from "lucide-react"
+import emailjs from '@emailjs/browser'
 
 const topics = [
   { value: "strategy", label: "Strategy & Architecture" },
@@ -32,39 +33,36 @@ export default function ContactForm() {
     setErrorMessage('')
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          company: formData.company,
-          topic: formData.topic,
-          message: formData.message,
-        }),
-      })
+      // EmailJS configuration
+      const serviceId = 'service_td_consult'
+      const templateId = 'template_contact_form'
+      const publicKey = 'YOUR_PUBLIC_KEY' // You'll need to replace this
 
-      if (response.ok) {
-        setSubmitStatus('success')
-        // Reset form
-        setFormData({
-          name: "",
-          email: "",
-          company: "",
-          topic: "",
-          message: "",
-          agreed: false
-        })
-      } else {
-        const errorData = await response.json()
-        setSubmitStatus('error')
-        setErrorMessage(errorData.error || 'Failed to send message. Please try again.')
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        company: formData.company || 'Not provided',
+        topic: formData.topic,
+        message: formData.message,
+        to_email: 'info@td-consult.info'
       }
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey)
+      
+      setSubmitStatus('success')
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        topic: "",
+        message: "",
+        agreed: false
+      })
     } catch (error) {
+      console.error('EmailJS error:', error)
       setSubmitStatus('error')
-      setErrorMessage('Network error. Please check your connection and try again.')
+      setErrorMessage('Failed to send message. Please try again or contact us directly at info@td-consult.info')
     } finally {
       setIsSubmitting(false)
     }
