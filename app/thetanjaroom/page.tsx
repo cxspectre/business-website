@@ -113,6 +113,32 @@ export default function TheTanjaRoom() {
         </div>
       </section>
 
+      {/* Evidence-Based Foundation */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">
+            Grounded in Evidence — Not Ideology
+          </h2>
+          <div className="text-lg text-gray-700 leading-relaxed space-y-6 mb-8">
+            <p>
+              The Tanja Room is built on medical research, system mapping, longitudinal pattern analysis and validated protocols. 
+              It draws from fields like bioinformatics, neuroimmunology, process automation, clinical regulation, and architecture logic.
+            </p>
+            <p>
+              The frameworks, routines, and recommendations inside this space are not spiritual guesses or feel-good advice. 
+              They are derived from peer-reviewed science, real-world data, and years of lived pattern recognition across human systems — technical and biological.
+            </p>
+            <p className="font-semibold text-gray-900 text-xl">
+              If it doesn't hold under pressure, it's not in here.
+            </p>
+            <p>
+              Every module, product, and companion tool must pass one test: 
+              Is it intelligent, adaptive, and backed by more than belief?
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Core Offerings */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -163,14 +189,23 @@ export default function TheTanjaRoom() {
       {/* Call to Action */}
       <section className="py-20 bg-[#fdf9fb]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            A Place Where Your Complexity Makes Sense
+          <h2 className="text-4xl font-bold text-gray-900 mb-8">
+            Because You Don't Need Another Solution
           </h2>
-          <p className="text-xl text-gray-700 leading-relaxed mb-8">
-            You don't need another solution. You need structure that adapts, 
-            intelligence that doesn't overwhelm, and presence the system never gave you.
-          </p>
-          <div className="inline-flex flex-col sm:flex-row gap-4">
+          <div className="text-xl text-gray-700 leading-relaxed space-y-6 mb-12">
+            <p>
+              You need a place where your complexity makes sense.
+            </p>
+            <p>
+              A space to learn, reflect, choose, and rebuild — at your own rhythm, with real support.
+            </p>
+            <p>
+              With structure that adapts.<br />
+              With intelligence that doesn't overwhelm.<br />
+              And with the kind of presence that the system never gave you.
+            </p>
+          </div>
+          <div className="inline-flex flex-col sm:flex-row gap-4 mb-8">
             <a 
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#b48a98] text-white rounded-full font-medium hover:bg-[#b48a98]/90 transition-all duration-300 group"
@@ -185,7 +220,7 @@ export default function TheTanjaRoom() {
               Learn More
             </a>
           </div>
-          <p className="text-lg font-semibold text-[#b48a98] mt-8">
+          <p className="text-2xl font-bold text-[#b48a98]">
             The Tanja Room is here — to hold what no protocol could.
           </p>
         </div>
