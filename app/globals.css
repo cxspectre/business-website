@@ -114,3 +114,7 @@ body {
     animation: none;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}

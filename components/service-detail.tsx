@@ -164,7 +164,7 @@ const ServiceDetail = () => {
   const allTags = Array.from(new Set(services.flatMap(service => service.tags)))
 
   return (
-    <section className={`w-full ${typography.sectionSpacing.small}`}>
+    <section id="services-detail" className={`w-full ${typography.sectionSpacing.small}`}>
       <div className={getContainerClasses("main", "section")}>
         {/* Section Header */}
         <div className="mb-16">

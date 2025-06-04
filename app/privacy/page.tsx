@@ -34,9 +34,9 @@ export default function Privacy() {
             {/* Introduction */}
             <div className="mb-16">
               <p className="text-lg text-gray-600 leading-relaxed">
-                This Privacy Policy describes how Tanja Drefke Consult ("we", "us", or "our") collects, uses, and
-                discloses your personal information when you visit our website or contact us for our services.
-              </p>
+              This Privacy Policy describes how Tanja Drefke Consult ("we", "us", or "our") collects, uses, and
+              discloses your personal information when you visit our website or contact us for our services.
+            </p>
             </div>
 
             {/* Content Sections */}
@@ -47,10 +47,10 @@ export default function Privacy() {
                   Information We Collect
                 </h2>
                 <div className="text-gray-600 leading-relaxed">
-                  <p>
-                    We collect information that you provide directly to us, such as when you fill out a contact form,
-                    subscribe to our newsletter, or communicate with us via email or phone.
-                  </p>
+            <p>
+              We collect information that you provide directly to us, such as when you fill out a contact form,
+              subscribe to our newsletter, or communicate with us via email or phone.
+            </p>
                 </div>
               </div>
 
@@ -59,13 +59,13 @@ export default function Privacy() {
                   How We Use Your Information
                 </h2>
                 <div className="text-gray-600 leading-relaxed space-y-4">
-                  <p>We use the information we collect to:</p>
+            <p>We use the information we collect to:</p>
                   <ul className="list-disc pl-6 space-y-2">
-                    <li>Respond to your inquiries and provide the services you request</li>
-                    <li>Send you updates, newsletters, and marketing communications</li>
-                    <li>Improve our website and services</li>
-                    <li>Comply with legal obligations</li>
-                  </ul>
+              <li>Respond to your inquiries and provide the services you request</li>
+              <li>Send you updates, newsletters, and marketing communications</li>
+              <li>Improve our website and services</li>
+              <li>Comply with legal obligations</li>
+            </ul>
                 </div>
               </div>
 
@@ -74,11 +74,11 @@ export default function Privacy() {
                   Cookies and Analytics
                 </h2>
                 <div className="text-gray-600 leading-relaxed">
-                  <p>
-                    We use cookies and similar tracking technologies to track activity on our website and to hold certain
-                    information. We use a lightweight, cookie-free analytics solution (Vercel Web Analytics) to understand how
-                    visitors use our site.
-                  </p>
+            <p>
+              We use cookies and similar tracking technologies to track activity on our website and to hold certain
+              information. We use a lightweight, cookie-free analytics solution (Vercel Web Analytics) to understand how
+              visitors use our site.
+            </p>
                 </div>
               </div>
 
@@ -87,10 +87,10 @@ export default function Privacy() {
                   Data Security
                 </h2>
                 <div className="text-gray-600 leading-relaxed">
-                  <p>
-                    We implement appropriate security measures to protect your personal information. However, please be aware
-                    that no method of transmission over the Internet or electronic storage is 100% secure.
-                  </p>
+            <p>
+              We implement appropriate security measures to protect your personal information. However, please be aware
+              that no method of transmission over the Internet or electronic storage is 100% secure.
+            </p>
                 </div>
               </div>
 
@@ -99,10 +99,10 @@ export default function Privacy() {
                   Your Rights
                 </h2>
                 <div className="text-gray-600 leading-relaxed">
-                  <p>
-                    Depending on your location, you may have certain rights regarding your personal information, such as the
-                    right to access, correct, or delete your data.
-                  </p>
+            <p>
+              Depending on your location, you may have certain rights regarding your personal information, such as the
+              right to access, correct, or delete your data.
+            </p>
                 </div>
               </div>
 
@@ -135,10 +135,10 @@ export default function Privacy() {
                   Changes to This Privacy Policy
                 </h2>
                 <div className="text-gray-600 leading-relaxed">
-                  <p>
-                    We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new
+            <p>
+              We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new
                     Privacy Policy on this page and updating the "Last updated" date.
-                  </p>
+            </p>
                 </div>
               </div>
 

@@ -13,7 +13,12 @@ const credibilityMarkers = [
 export default function Services() {
   return (
     <main className="min-h-screen">
-      <ServiceHero />
+      {/* Hero Section Card */}
+      <div className="w-full max-w-[98%] mx-auto mt-4 mb-8">
+        <div className="overflow-hidden rounded-[40px]">
+          <ServiceHero />
+        </div>
+      </div>
       <ServiceDetail />
       <ServiceProcess />
       <SecondaryCta

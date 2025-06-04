@@ -1,141 +1,99 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Brain, Rocket, CheckCircle2, ArrowRight } from "lucide-react"
+import { Brain, Rocket, CheckCircle2, ArrowRight, Compass, Users } from "lucide-react"
 import Link from "next/link"
-import { typography, getContainerClasses } from "@/lib/typography"
+import Image from "next/image"
+import { assetPath } from "@/lib/asset-path"
+import { typography } from "@/lib/typography"
 
-const credibilityMarkers = [
+const serviceHighlights = [
   {
     icon: Brain,
-    label: "Strategy-Driven",
-    description: "Clarity in complexity"
+    title: "Strategic Advisory",
+    description: "Clarity in complexity for confident decisions."
   },
   {
     icon: Rocket,
-    label: "Enterprise-Ready",
-    description: "Built for scale"
+    title: "Enterprise Execution",
+    description: "Built for scale, speed, and measurable results."
   },
   {
     icon: CheckCircle2,
-    label: "Proven Execution",
-    description: "Measurable impact"
+    title: "Proven Impact",
+    description: "Transformation that lasts and delivers value."
+  },
+  {
+    icon: Users,
+    title: "Change Management",
+    description: "Aligning people and systems for real adoption."
   }
 ]
 
 const ServiceHero = () => {
   return (
-    <section className={`relative ${typography.sectionSpacing.large} bg-gradient-to-br from-slate-50 to-white overflow-hidden`}>
-      <div className={getContainerClasses("main", "section")}>
-        <div className="grid lg:grid-cols-[1.2fr,1fr] gap-12 items-center">
-          {/* Left Column - Content */}
-          <div>
-            <motion.span 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="inline-block text-sm font-medium text-[#b48a98] mb-4"
-            >
-              Our Approach
-            </motion.span>
-            
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-[1.1]"
-            >
-              Solving What Matters{" "}
-              <span className="text-[#b48a98]">
-                in the Digital Space
-              </span>
-            </motion.h1>
+    <section className="relative w-full h-[80vh] min-h-[600px] max-h-[850px] flex items-center overflow-hidden" aria-label="Services Hero Section">
+      {/* Background Image + Overlays */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={assetPath("/images/Herobackground.png")}
+          alt="Services Hero Background"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        {/* Dark and color overlays for depth */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-[#b48a98]/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#b48a98]/30 via-transparent to-[#cea7b1]/10" />
+      </div>
 
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-xl text-gray-600 leading-relaxed mb-8 max-w-xl"
-            >
-              From advisory to execution, we help leaders navigate transformation with clarity, consequence, and measurable impact.
-            </motion.p>
-
-            {/* Credibility Markers */}
-            <div className="grid sm:grid-cols-3 gap-6 mb-8">
-              {credibilityMarkers.map((marker, idx) => {
-                const Icon = marker.icon
-                return (
-                  <motion.div
-                    key={marker.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 + idx * 0.1 }}
-                    className="flex flex-col items-center text-center p-4 rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-[#b48a98]/10 flex items-center justify-center mb-3">
-                      <Icon className="w-6 h-6 text-[#b48a98]" />
-                    </div>
-                    <h3 className="font-medium text-gray-900 mb-1">
-                      {marker.label}
-                    </h3>
-                    <p className="text-sm text-gray-500">
-                      {marker.description}
-                    </p>
-                  </motion.div>
-                )
-              })}
+      <div className="w-full max-w-6xl mx-auto px-4 relative z-10 py-6">
+        <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-center min-h-[400px]">
+          {/* Left: Main Content */}
+          <div className="lg:col-span-7 space-y-5">
+            <div className="inline-flex items-center gap-2 mb-2 px-4 py-1.5 rounded-full bg-[#b48a98]/20 text-[#b48a98] text-xs font-semibold shadow-sm border border-[#b48a98]/30 backdrop-blur-sm">
+              <CheckCircle2 className="w-4 h-4" aria-hidden="true" />
+              Enterprise Transformation
             </div>
-
-            {/* CTA Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 leading-tight [text-shadow:_0_2px_15px_rgb(0_0_0_/_50%)]">
+              Solving What Matters{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#b48a98] via-[#cea7b1] to-[#b48a98] [text-shadow:_0_2px_15px_rgb(206_167_177_/_30%)]">in the Digital Space</span>
+            </h1>
+            <p className="text-lg text-white/90 mb-8 max-w-2xl font-medium [text-shadow:_0_1px_10px_rgb(0_0_0_/_30%)]">
+              From advisory to execution, we help leaders navigate transformation with clarity, consequence, and measurable impact.
+            </p>
+            <Link
+              href="#services-detail"
+              className="group relative bg-gradient-to-r from-[#5b3c46] via-[#996475] to-[#cea7b1] hover:from-[#996475] hover:via-[#cea7b1] hover:to-[#ffeef3] text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-base font-semibold flex items-center justify-center gap-2 transform hover:scale-105"
             >
-              <Link
-                href="#services"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#b48a98] text-white rounded-full hover:bg-[#b48a98]/90 transition-all duration-300 text-sm font-medium group shadow-sm hover:shadow-md"
-              >
-                Explore Our Expertise
-                <motion.span
-                  className="w-4 h-4"
-                  whileHover={{ x: 4 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  <ArrowRight className="w-4 h-4" />
-                </motion.span>
-              </Link>
-            </motion.div>
+              <span className="relative z-10">See Our Services</span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
+            </Link>
           </div>
 
-          {/* Right Column - Visual */}
-          <div className="relative">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.3 }}
-              className="relative z-10"
-            >
-              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-[#b48a98]/20 via-[#b48a98]/10 to-[#b48a98]/5 p-8">
-                <div className="w-full h-full rounded-xl bg-white/80 backdrop-blur-sm border border-[#b48a98]/10 shadow-xl">
-                  {/* Add decorative elements or illustrations here */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="grid grid-cols-2 gap-4 opacity-50">
-                      {Array.from({ length: 4 }).map((_, idx) => (
-                        <div
-                          key={idx}
-                          className="w-16 h-16 rounded-lg bg-[#b48a98]/10"
-                        />
-                      ))}
-                    </div>
+          {/* Right: Service Highlights (vertical stack on desktop) */}
+          <div className="lg:col-span-5 flex flex-col gap-6 items-end mt-10 lg:mt-0">
+            {serviceHighlights.map((item, idx) => {
+              const Icon = item.icon
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.2 + idx * 0.1, duration: 0.5, type: 'spring' }}
+                  className="flex flex-row items-center gap-4 px-6 py-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 shadow-lg min-w-[260px] max-w-xs w-full"
+                >
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#b48a98] via-[#cea7b1] to-[#b48a98] flex items-center justify-center shadow-lg border-2 border-white/30 ring-2 ring-[#cea7b1]/40">
+                    <Icon className="w-8 h-8 text-white drop-shadow-[0_2px_8px_rgba(180,138,152,0.5)]" aria-hidden="true" />
                   </div>
-                </div>
-              </div>
-            </motion.div>
-            
-            {/* Decorative Elements */}
-            <div className="absolute inset-0 -z-10">
-              <div className="absolute top-8 right-8 w-64 h-64 bg-[#b48a98]/5 rounded-full blur-3xl" />
-              <div className="absolute bottom-8 left-8 w-48 h-48 bg-[#b48a98]/10 rounded-full blur-2xl" />
-            </div>
+                  <div>
+                    <div className="font-semibold text-white text-base leading-tight mb-1 [text-shadow:_0_1px_8px_rgb(0_0_0_/_30%)]">{item.title}</div>
+                    <div className="text-xs text-white/80 leading-tight max-w-[180px] [text-shadow:_0_1px_8px_rgb(0_0_0_/_20%)]">{item.description}</div>
+                  </div>
+                </motion.div>
+              )
+            })}
           </div>
         </div>
       </div>

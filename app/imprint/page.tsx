@@ -160,9 +160,9 @@ export default function Imprint() {
                     </a>
                   </p>
                   <p>
-                    We are not willing or obliged to participate in dispute resolution proceedings before a consumer
-                    arbitration board.
-                  </p>
+              We are not willing or obliged to participate in dispute resolution proceedings before a consumer
+              arbitration board.
+            </p>
                 </div>
               </div>
 
