@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import Link from "next/link"
 import { 
   AlertCircle, 
   ArrowRight,
@@ -144,13 +143,13 @@ const ProblemSection = () => {
             <h3 className="text-2xl md:text-3xl font-bold text-[#0b1c28] mb-8 leading-tight">
               We don't fix symptoms. We build the structure that prevents failure — from day one.
             </h3>
-            <Link 
-              href="/services"
+            <a 
+              href="#4d-framework"
               className="group inline-flex items-center gap-3 bg-gradient-to-r from-[#5b3c46] via-[#996475] to-[#cea7b1] hover:from-[#996475] hover:via-[#cea7b1] hover:to-[#ffeef3] text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
             >
               Discover the 4D Approach
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-            </Link>
+            </a>
           </div>
         </motion.div>
 

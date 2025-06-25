@@ -327,7 +327,7 @@ export default function TdcFrameworkNew() {
   }
 
   return (
-    <section className={`relative ${typography.sectionSpacing.standard} bg-gradient-to-br from-gray-50/50 via-white to-[#faf8f9] overflow-hidden`}>
+    <section id="4d-framework" className={`relative ${typography.sectionSpacing.standard} bg-gradient-to-br from-gray-50/50 via-white to-[#faf8f9] overflow-hidden`}>
       {/* Subtle background decoration */}
       <div className="absolute top-20 right-20 w-64 h-64 bg-[#b48a98]/5 rounded-full blur-3xl" />
       <div className="absolute bottom-20 left-20 w-48 h-48 bg-[#b48a98]/3 rounded-full blur-3xl" />
