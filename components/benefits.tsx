@@ -34,7 +34,7 @@ const Benefits = () => {
             <BenefitCard
               icon={<Shield size={32} className="text-primary-plum" />}
               title="Enterprise Rigor"
-              description="Benefit from 23+ years of experience delivering complex enterprise IT programs."
+              description="Benefit from 25+ years of experience delivering complex enterprise IT programs."
             />
           </SectionObserver>
         </div>

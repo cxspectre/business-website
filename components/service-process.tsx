@@ -18,7 +18,7 @@ import { typography, getContainerClasses } from "@/lib/typography"
 const impactMetrics = [
   {
     icon: Award,
-    metric: "17+",
+    metric: "25+",
     label: "Years",
     description: "Leading high-stakes enterprise transformation",
     detail: "Deep expertise in multi-million euro programs across global environments."

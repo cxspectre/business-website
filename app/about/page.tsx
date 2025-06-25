@@ -8,7 +8,7 @@ import { typography } from "@/lib/typography"
 import { assetPath } from "@/lib/asset-path"
 
 const highlights = [
-  "20+ Years of Experience & Insight",
+      "25+ Years of Experience & Insight",
   "Enterprise-Scale Execution",
   "Trusted Across Regulated Industries"
 ]
@@ -106,7 +106,7 @@ export default function About() {
                   <span className="text-white">Competitive Advantage</span>
                 </h1>
                 <p className="text-xl text-white/90 mb-12 leading-relaxed max-w-3xl mx-auto">
-                  With 20+ years of experience, TDC helps enterprises decode complexity,
+                  With 25+ years of experience, TDC helps enterprises decode complexity,
                   align people and systems, and deliver transformation that lasts.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
@@ -186,7 +186,7 @@ export default function About() {
                 </p>
                 <div className="space-y-4 text-gray-600 leading-relaxed">
                   <p>
-                    With 20+ years leading multimillion-euro programs across global industries,
+                    With 25+ years leading multimillion-euro programs across global industries,
                     Tanja brings clarity to complexity.
                   </p>
                   <p>

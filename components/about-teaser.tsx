@@ -72,7 +72,7 @@ const AboutTeaser = () => {
           whileInView={{ opacity: 1, y: 0 }}
           className={`text-gray-600 ${typography.subtitle.large} max-w-2xl ${typography.spacing.componentMargin}`}
         >
-          Over 23 Years of Driving Global IT Transformation
+          Over 25 Years of Driving Global IT Transformation
         </motion.p>
       </div>
 
@@ -100,7 +100,7 @@ const AboutTeaser = () => {
               <div className="flex items-center gap-2">
                 <Award className="w-5 h-5 text-[#b48a98]" />
                 <div>
-                  <div className={`${typography.h6} text-gray-900`}>23+ Years</div>
+                  <div className={`${typography.h6} text-gray-900`}>25+ Years</div>
                   <div className={`${typography.body.tiny} text-gray-500`}>Experience</div>
                 </div>
               </div>
@@ -120,7 +120,7 @@ const AboutTeaser = () => {
             <div>
               <h3 className={`${typography.h4} text-gray-900 ${typography.spacing.itemMargin}`}>About Tanja</h3>
               <p className={`text-gray-700 ${typography.body.medium} ${typography.spacing.componentMargin}`}>
-                With over 23 years of experience in enterprise IT, Tanja Drefke has led transformation programs across 
+                With over 25 years of experience in enterprise IT, Tanja Drefke has led transformation programs across 
                 industries and continents — specializing in turning complexity into streamlined, scalable solutions.
               </p>
             </div>

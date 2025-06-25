@@ -127,7 +127,7 @@ const Footer = () => {
         <div className="mt-16 pt-8 border-t border-[#b48a98]/10 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
           <p>
             © {new Date().getFullYear()} Tanja Drefke Consult.
-            <span className="text-[#b48a98] ml-2">Backed by 23 years of hands-on expertise.</span>
+            <span className="text-[#b48a98] ml-2">Backed by 25+ years of hands-on expertise.</span>
           </p>
           <BackToTopButton />
         </div>
