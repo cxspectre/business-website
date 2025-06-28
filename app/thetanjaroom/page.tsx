@@ -49,62 +49,67 @@ export default function TheTanjaRoom() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-40 pb-20 bg-gradient-to-br from-[#fdf9fb] via-white to-[#b48a98]/5">
+      <section className="pt-40 pb-8 bg-gradient-to-br from-white via-[#fdf9fb] to-[#b48a98]/5">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#b48a98]/10 rounded-full text-[#b48a98] text-sm font-medium mb-6">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#b48a98]/10 rounded-full text-[#b48a98] text-sm font-medium mb-8">
               <div className="w-2 h-2 bg-[#b48a98] rounded-full animate-pulse"></div>
-              Coming Soon
+              Healthtech Venture
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-              The<span className="text-[#b48a98]">Tanja</span>Room
+            
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight tracking-tight">
+              THE TANJA ROOM IS A<br />
+              <span className="text-[#b48a98]">NEXT-GENERATION</span><br />
+              HEALTHTECH VENTURE
             </h1>
-            <p className="text-2xl font-light text-gray-600 mb-8">
-              A Human-Centered Operating System
-            </p>
-            <div className="max-w-3xl mx-auto text-lg text-gray-700 leading-relaxed mb-12">
+            
+            <div className="max-w-4xl mx-auto space-y-8 text-lg md:text-xl text-gray-700 leading-relaxed mb-12">
+              <p className="font-medium">
+                Founded on 25+ years of enterprise consulting and medical systems expertise.
+              </p>
               <p>
-                Born from 25+ years in systems architecture and transformation — 
-                merging AI logic, emotional intelligence, and deep regenerative insight 
-                into frameworks that don't offer fixes, but structure for complexity.
+                It's where regenerative science meets intelligent systems – with a clear mission: to bring structure and relief to people facing complex health journeys.
               </p>
             </div>
-          </div>
 
-          {/* Key Principles */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="text-center p-6 rounded-2xl bg-white/50 backdrop-blur-sm">
-              <CheckCircle className="w-8 h-8 text-[#b48a98] mx-auto mb-4" />
-              <h3 className="font-semibold text-gray-900 mb-2">Evidence-Based</h3>
-              <p className="text-sm text-gray-600">Grounded in medical research, not ideology</p>
+            <div className="max-w-4xl mx-auto bg-white/60 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-gray-100 mb-12">
+              <div className="space-y-6 text-lg text-gray-800 leading-relaxed">
+                <p className="text-xl font-semibold text-gray-900">
+                  This is not a side project.
+                </p>
+                <p>
+                  It's my second real venture – a startup born from both legacy and necessity.
+                </p>
+                <p>
+                  We are currently in review within several European and cross-border innovation and health grant programs, and we're laying the foundation for a scalable, AI-driven health ecosystem.
+                </p>
+                <p className="font-medium">
+                  The Tanja Room is being built to last – with real infrastructure, medical oversight, and the kind of focus that only comes from lived experience.
+                </p>
+              </div>
             </div>
-            <div className="text-center p-6 rounded-2xl bg-white/50 backdrop-blur-sm">
-              <CheckCircle className="w-8 h-8 text-[#b48a98] mx-auto mb-4" />
-              <h3 className="font-semibold text-gray-900 mb-2">Adaptive Intelligence</h3>
-              <p className="text-sm text-gray-600">Structure that adapts to your complexity</p>
-            </div>
-            <div className="text-center p-6 rounded-2xl bg-white/50 backdrop-blur-sm">
-              <CheckCircle className="w-8 h-8 text-[#b48a98] mx-auto mb-4" />
-              <h3 className="font-semibold text-gray-900 mb-2">Systems Thinking</h3>
-              <p className="text-sm text-gray-600">Decode signals, understand patterns</p>
+
+            <div className="flex justify-center">
+              <div className="flex items-center gap-2 text-[#b48a98]">
+                <div className="w-8 h-px bg-[#b48a98]"></div>
+                <span className="text-2xl">⬇</span>
+                <div className="w-8 h-px bg-[#b48a98]"></div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Core Philosophy */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">
-            Where Systems Break, Human Intelligence Begins
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+            "If it doesn't hold under pressure, it doesn't belong in your system."
           </h2>
           <div className="text-lg text-gray-700 leading-relaxed space-y-6 mb-12">
             <p>
               Whether you live with invisible symptoms, chronic dysregulation, or simply a deep sense of misalignment — 
               this is a place where your experience isn't questioned. It's decoded, supported, and structured.
-            </p>
-            <p className="font-medium text-gray-900">
-              "If it doesn't hold under pressure, it's not in here."
             </p>
             <p>
               Every framework, tool, and companion layer must be intelligent, adaptive, and backed by more than belief.
@@ -113,8 +118,31 @@ export default function TheTanjaRoom() {
         </div>
       </section>
 
+      {/* Key Principles */}
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center p-8 rounded-2xl bg-white shadow-sm">
+              <CheckCircle className="w-10 h-10 text-[#b48a98] mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Evidence-Based</h3>
+              <p className="text-gray-600">Grounded in medical research, not ideology</p>
+            </div>
+            <div className="text-center p-8 rounded-2xl bg-white shadow-sm">
+              <CheckCircle className="w-10 h-10 text-[#b48a98] mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Adaptive Intelligence</h3>
+              <p className="text-gray-600">Structure that adapts to your complexity</p>
+            </div>
+            <div className="text-center p-8 rounded-2xl bg-white shadow-sm">
+              <CheckCircle className="w-10 h-10 text-[#b48a98] mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Systems Thinking</h3>
+              <p className="text-gray-600">Decode signals, understand patterns</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Evidence-Based Foundation */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">
             Grounded in Evidence — Not Ideology
@@ -140,9 +168,9 @@ export default function TheTanjaRoom() {
       </section>
 
       {/* Core Offerings */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Six Pillars of Regenerative Support
             </h2>
@@ -187,7 +215,7 @@ export default function TheTanjaRoom() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-[#fdf9fb]">
+      <section className="py-16 bg-[#fdf9fb]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-8">
             Because You Don't Need Another Solution
@@ -220,6 +248,14 @@ export default function TheTanjaRoom() {
               Learn More
             </a>
           </div>
+          
+          {/* Pre-launch status */}
+          <div className="max-w-2xl mx-auto mb-8 p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-gray-100">
+            <p className="text-gray-700 text-lg">
+              Currently pre-launch. Open for selected partners, collaborators & early adopters.
+            </p>
+          </div>
+          
           <p className="text-2xl font-bold text-[#b48a98]">
             The Tanja Room is here — to hold what no protocol could.
           </p>

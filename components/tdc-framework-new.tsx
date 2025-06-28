@@ -382,7 +382,7 @@ export default function TdcFrameworkNew() {
           </motion.button>
         </div>
 
-        {/* Core Principles - Clean horizontal layout */}
+        {/* Core Principles - Clean layout matching site style */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -390,45 +390,45 @@ export default function TdcFrameworkNew() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mb-20"
         >
-          <div className="flex flex-col lg:flex-row lg:items-start lg:gap-16">
+          <div className="text-center mb-12">
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.4, delay: 0.4 }}
-              className="lg:flex-shrink-0 lg:w-72 mb-10 lg:mb-0"
+              className="inline-block"
             >
-              <h3 className="text-xl lg:text-2xl font-bold text-[#b48a98] mb-3">
+              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-3">
                 The 4D Framework is guided by 
               </h3>
-              <div className="flex items-baseline gap-3">
-                <span className="text-3xl font-bold text-[#b48a98]">3</span>
+              <div className="flex items-baseline justify-center gap-3">
+                <span className="text-4xl font-bold text-[#b48a98]">3</span>
                 <span className="text-lg text-gray-600">core beliefs</span>
               </div>
             </motion.div>
-            
-            <div className="flex flex-col md:flex-row md:gap-10 lg:gap-12 flex-1">
-              {corePrinciples.map((principle, index) => (
-                <motion.div 
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                  className="flex-1 pb-6 md:pb-0"
-                >
-                  <div className="mb-3">
-                    <div className="w-2 h-8 bg-gradient-to-b from-[#b48a98] to-[#b48a98]/30 rounded-full mb-3" />
-                  </div>
-                  <h4 className="text-base font-bold text-gray-900 mb-2">
-                    {principle.title}
-                  </h4>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    {principle.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+            {corePrinciples.map((principle, index) => (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+                className="text-center"
+              >
+                <div className="mb-4">
+                  <div className="w-2 h-12 bg-gradient-to-b from-[#b48a98] to-[#b48a98]/30 rounded-full mx-auto mb-4" />
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-3 leading-tight">
+                  {principle.title}
+                </h4>
+                <p className="text-gray-600 leading-relaxed">
+                  {principle.description}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
 
